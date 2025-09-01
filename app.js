@@ -42,8 +42,12 @@ const server = http.createServer((req, res) => {
         </head>
         <body>
           <div class="header">
-            <h1>IZUABUEKE DAVIDSON ANUJULU DevOps Engineer!</h1>
-            <p>Modern Node.js application with CI/CD pipeline</p>
+            <h1>IZUABUEKE DAVIDSON ANUJULU  </h1>
+            <h2>DevOps Engineer</h2>
+            <p>I sincerely want to thank you both for your guidance, patience, and encouragement throughout my DevOps journey. Your mentorship has not only deepened my technical skills but also given me the confidence to tackle challenges with a problem-solving mindset.</p>
+            <p>I truly appreciate the time you’ve invested in sharing your knowledge, providing clarity when things seemed complex, and pushing me to keep improving. Your support has made a real difference, and I’m grateful to have learned from such dedicated and inspiring coaches.</p>
+            <p>Thank you for being part of this journey — I’m excited to keep building on what you’ve taught me.</p>
+            
           </div>
           <h2>Available Endpoints:</h2>
           <div class="endpoint">
