@@ -109,3 +109,88 @@ Install these tools before starting:
 
     ```
    
+Copy the [app.js](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917fcf#full-appjs-code) code
+ into this file.   
+
+ **Install Dependencies**
+    ```bash
+        npm install --save-dev jest eslint supertest
+        npm install
+
+    ```
+## **4. Testing Setup**
+**Create Test Folder and File**
+
+    ```bash
+        mkdir tests
+        touch tests/app.test.js
+
+    ```
+Copy the [test code](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917fcf#test-code)
+ into this file.    
+ **Create Jest Config**
+     ```bash
+
+         touch jest.config.js
+
+    ```
+
+    ```js
+
+    module.exports = {
+  testEnvironment: 'node',
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  testMatch: ['**/tests/**/*.test.js'],
+  verbose: true
+};
+
+    ```
+## **5. CI/CD with GitHub Actions**
+
+Create workflow folder and file:   
+    ```bash
+
+        mkdir -p .github/workflows
+        touch .github/workflows/ci.yml
+
+    ```   
+Copy the [pipeline code](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917fcf#cicd-pipeline-code)
+ into this file  
+
+## **6. Docker Configuration**
+**Create Dockerfile**
+
+    ```bash
+        touch Dockerfile
+
+    ```
+
+Copy the [Dockerfile code](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917fcf#dockerfile-code)
+ into this file.
+ **Create .dockerignore**
+ What this file does: Tells Docker which files to ignore when building the container image (similar to .gitignore).
+
+How to create the file:
+
+     ```bash
+         touch .dockerignore
+
+    ```
+ Copy this content into .dockerignore:
+
+    (node_modules npm-debug.log* .git .github .env .env.local .env.*.local logs *.log coverage .nyc_output .vscode .idea *.swp *.swo .DS_Store Thumbs.db README.md tests/ jest.config.js .eslintrc*)
+
+Create .gitignore
+    What this file does: Tells Git which files to ignore and not track in version control (like temporary files, dependencies, etc.).
+
+How to create the file:
+
+    ```bash
+        touch .gitignore
+    ```
+
+ Copy this content into .gitignore:
+
+# Dependencies node_modules/ npm-debug.log*  # Runtime data pids *.pid *.seed *.pid.lock  # Coverage coverage/ .nyc_output  # Environment variables .env .env.local .env.*.local  # Logs logs *.log  # IDE .vscode/ .idea/ *.swp *.swo  # OS .DS_Store Thumbs.db
+Create environment temp
