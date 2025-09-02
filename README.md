@@ -61,6 +61,7 @@ Install these tools before starting:
     ```
 
 **Create Project Folder**
+
     ```bash
         mkdir my-devops-project
         cd my-devops-project
@@ -77,6 +78,7 @@ Install these tools before starting:
 
     ```
  This creates a package.json. Update it as follows:
+
     ```json
             {
         "name": "my-devops-project",
@@ -113,6 +115,7 @@ Copy the [app.js](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917fcf#ful
  into this file.   
 
  **Install Dependencies**
+
     ```bash
         npm install --save-dev jest eslint supertest
         npm install
@@ -129,6 +132,7 @@ Copy the [app.js](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917fcf#ful
 Copy the [test code](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917fcf#test-code)
  into this file.    
  **Create Jest Config**
+
      ```bash
 
          touch jest.config.js
@@ -137,15 +141,16 @@ Copy the [test code](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917fcf#
 
     ```js
 
-    module.exports = {
-  testEnvironment: 'node',
-  collectCoverage: true,
-  coverageDirectory: 'coverage',
-  testMatch: ['**/tests/**/*.test.js'],
-  verbose: true
-};
+        module.exports = {
+        testEnvironment: 'node',
+        collectCoverage: true,
+        coverageDirectory: 'coverage',
+        testMatch: ['**/tests/**/*.test.js'],
+        verbose: true
+    };
 
     ```
+
 ## **5. CI/CD with GitHub Actions**
 
 Create workflow folder and file:   
@@ -159,6 +164,7 @@ Copy the [pipeline code](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917
  into this file  
 
 ## **6. Docker Configuration**
+
 **Create Dockerfile**
 
     ```bash
@@ -168,7 +174,9 @@ Copy the [pipeline code](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917
 
 Copy the [Dockerfile code](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917fcf#dockerfile-code)
  into this file.
+
  **Create .dockerignore**
+
  What this file does: Tells Docker which files to ignore when building the container image (similar to .gitignore).
 
 How to create the file:
@@ -192,5 +200,4 @@ How to create the file:
 
  Copy this content into .gitignore:
 
-# Dependencies node_modules/ npm-debug.log*  # Runtime data pids *.pid *.seed *.pid.lock  # Coverage coverage/ .nyc_output  # Environment variables .env .env.local .env.*.local  # Logs logs *.log  # IDE .vscode/ .idea/ *.swp *.swo  # OS .DS_Store Thumbs.db
-Create environment temp
+ (Dependencies node_modules/ npm-debug.log*   *.pid *.seed *.pid.lock   coverage/ .nyc_output   .env .env.local .env.*.local   logs *.log   .vscode/ .idea/ *.swp *.swo   .DS_Store Thumbs.db)
