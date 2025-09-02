@@ -153,7 +153,8 @@ Copy the [test code](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917fcf#
 
 ## **5. CI/CD with GitHub Actions**
 
-Create workflow folder and file:   
+Create workflow folder and file:  
+
     ```bash
 
         mkdir -p .github/workflows
@@ -200,4 +201,4 @@ How to create the file:
 
  Copy this content into .gitignore:
 
- (Dependencies node_modules/ npm-debug.log*   *.pid *.seed *.pid.lock   coverage/ .nyc_output   .env .env.local .env.*.local   logs *.log   .vscode/ .idea/ *.swp *.swo   .DS_Store Thumbs.db)
+ (Dependencies node_modules/ npm-debug.log* *.pid *.seed *.pid.lock coverage/* .nyc_output .env .env.local .env.*.local logs *.log .vscode/ .idea/ *.swp *.swo .DS_Store Thumbs.db)
