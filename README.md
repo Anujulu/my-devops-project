@@ -52,35 +52,36 @@ Install these tools before starting:
 ## **2. Project Setup**
 **Configure Git**
 
-    ```bash
+```bash
 
-        git config --global user.name "Your Name"
-        git config --global user.email "you@example.com"
-        git config --global init.defaultBranch main
+  git config --global user.name "Your Name"
+  git config --global user.email "you@example.com"
+  git config --global init.defaultBranch main
 
-    ```
+```
 
 **Create Project Folder**
 
-    ```bash
-        mkdir my-devops-project
-        cd my-devops-project
-        git init
+```bash
+  mkdir my-devops-project
+  cd my-devops-project
+  git init
 
-    ```
+```
 
 ## **3. Build the Node.js Web App**
+
 **Initialize Project**
 
-    ```bash
+```bash
 
-        npm init -y
+  npm init -y
 
-    ```
+```
  This creates a package.json. Update it as follows:
 
-    ```json
-            {
+```json
+    {
         "name": "my-devops-project",
         "version": "1.0.0",
         "description": "DevOps learning project with Node.js",
@@ -100,80 +101,87 @@ Install these tools before starting:
             "eslint": "^8.57.0",
             "supertest": "^7.1.4"
         }
-        }
+    }
 
-    ```
+```
 **Create Application File**
 
-    ```bash
+```bash
+  # Create the main application file
+  touch app.js
 
-        touch app.js
-
-    ```
+```
    
-Copy the [app.js](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917fcf#full-appjs-code) code
+Copy the [app.js](https://github.com/Anujulu/my-devops-project/blob/main/app.js) code
  into this file.   
 
  **Install Dependencies**
 
-    ```bash
-        npm install --save-dev jest eslint supertest
-        npm install
+```bash
+  npm install --save-dev jest eslint supertest
+  npm install
 
-    ```
+```
 ## **4. Testing Setup**
+
 **Create Test Folder and File**
 
-    ```bash
-        mkdir tests
-        touch tests/app.test.js
+```bash
+  # Create a folder for your tests
+  mkdir tests
+  # Create the main test file
+  touch tests/app.test.js
 
-    ```
-Copy the [test code](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917fcf#test-code)
- into this file.    
+```
+Copy the [test code](https://github.com/Anujulu/my-devops-project/blob/main/tests/app.test.js) into this file. 
+
  **Create Jest Config**
 
-     ```bash
+```bash
 
-         touch jest.config.js
+  # Create Jest configuration file
+  touch jest.config.js
 
-    ```
+```
+Copy the Jest Configt code into this file.
 
-    ```js
+```js
 
-        module.exports = {
-        testEnvironment: 'node',
-        collectCoverage: true,
-        coverageDirectory: 'coverage',
-        testMatch: ['**/tests/**/*.test.js'],
-        verbose: true
+  module.exports = {
+  testEnvironment: 'node',
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  testMatch: ['**/tests/**/*.test.js'],
+  verbose: true
     };
 
-    ```
+```
 
 ## **5. CI/CD with GitHub Actions**
 
-Create workflow folder and file:  
+**Create workflow folder and file:** 
 
-    ```bash
+```bash
+  # Create the GitHub Actions directory structure
+  mkdir -p .github/workflows
+  # Create the workflow file
+  touch .github/workflows/ci.yml
 
-        mkdir -p .github/workflows
-        touch .github/workflows/ci.yml
-
-    ```   
-Copy the [pipeline code](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917fcf#cicd-pipeline-code)
- into this file  
+```   
+Copy the [pipeline code](https://github.com/Anujulu/my-devops-project/blob/main/.github/workflows/ci.yml) into this file  
 
 ## **6. Docker Configuration**
 
 **Create Dockerfile**
 
-    ```bash
-        touch Dockerfile
+```bash
 
-    ```
+  # Create the Dockerfile (no extension needed)
+  touch Dockerfile
 
-Copy the [Dockerfile code](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af917fcf#dockerfile-code)
+```
+
+Copy the [Dockerfile code](https://github.com/Anujulu/my-devops-project/blob/main/Dockerfile)
  into this file.
 
  **Create .dockerignore**
@@ -182,23 +190,172 @@ Copy the [Dockerfile code](https://chatgpt.com/c/68b7466a-326c-8322-90f2-0a29af9
 
 How to create the file:
 
-     ```bash
-         touch .dockerignore
+```bash
 
-    ```
- Copy this content into .dockerignore:
+  # Create Docker ignore file
+  touch .dockerignore
+
+```
+ Copy this content into [.dockerignore](https://github.com/Anujulu/my-devops-project/blob/main/.dockerignore)
 
     (node_modules npm-debug.log* .git .github .env .env.local .env.*.local logs *.log coverage .nyc_output .vscode .idea *.swp *.swo .DS_Store Thumbs.db README.md tests/ jest.config.js .eslintrc*)
 
-Create .gitignore
+**Create .gitignore**
     What this file does: Tells Git which files to ignore and not track in version control (like temporary files, dependencies, etc.).
 
 How to create the file:
 
-    ```bash
-        touch .gitignore
-    ```
+```bash
+  touch .gitignore
+```
 
- Copy this content into .gitignore:
+ Copy this content into [.gitignore](https://github.com/Anujulu/my-devops-project/blob/main/.gitignore)
 
- (Dependencies node_modules/ npm-debug.log* *.pid *.seed *.pid.lock coverage/* .nyc_output .env .env.local .env.*.local logs *.log .vscode/ .idea/ *.swp *.swo .DS_Store Thumbs.db)
+(Dependencies node_modules/ npm-debug.log* *.pid *.seed *.pid.lock coverage/* .nyc_output .env .env.local .env.*.local logs *.log .vscode/ .idea/ *.swp *.swo .DS_Store Thumbs.db)
+
+## Create environment template
+What this file does: Shows other developers what environment variables your application needs, without exposing actual secrets.
+
+How to create the file:
+
+```bash
+  # Create environment template file
+  touch .env.example  
+
+```
+Copy this content into [.env.example](https://github.com/Anujulu/my-devops-project/blob/main/.env.example)
+
+## Create ESLint configuration
+What this file does: Configures ESLint to check your JavaScript code for errors and maintain consistent coding style.
+
+How to create the file:
+  
+```bash
+  # Create ESLint configuration file
+  touch .eslintrc.js  
+```
+Copy this content into [.eslintrc.js](https://github.com/Anujulu/my-devops-project/blob/main/.eslintrc.js)
+
+## **7. Development with Docker Compose**
+
+What this step does: Creates a Docker Compose file that makes it easy to run your application and any supporting services (like databases) with a single command.
+
+```bash
+
+  # Create Docker Compose configuration file
+  touch docker-compose.yml
+
+```
+
+    Copy the [docker-compose.yml code](https://github.com/Anujulu/my-devops-project/blob/main/docker-compose.yml)
+ into this file.
+
+# **8. Running the App**
+
+**Local Run**
+
+```bash
+
+  # Install all dependencies from package.json (including latest versions)
+  npm install
+  # Run your test suite to make sure everything works
+  npm test
+  # Start the application server
+  npm start
+
+```
+**Test endpoints:**
+
+```bash
+  # In a new terminal window, test the endpoints:
+  curl http://localhost:3000/         # Homepage
+  curl http://localhost:3000/health   # Health check JSON
+  curl http://localhost:3000/info     # System info JSON
+  curl http://localhost:3000/metrics  # Prometheus metrics
+
+```
+
+## Docker Run
+
+```bash
+
+  # Build image
+  docker build -t my-devops-app:latest .
+  # Run container
+  docker run -d -p 3000:3000 --name my-devops-container my-devops-app:latest
+  # Check container status
+  docker ps
+  
+  # Test health check
+  curl http://localhost:3000/health
+
+  # Stop container
+  docker stop my-devops-container
+  docker rm my-devops-container
+
+```
+
+## Docker Compose Run
+
+What these commands do: Use Docker Compose to manage multiple services together with a single command.
+
+```bash
+
+  # Start all services defined in docker-compose.yml
+  docker-compose up -d
+  # View real-time logs from all services
+  docker-compose logs -f
+  # Stop all services and clean up
+  docker-compose down
+  
+```
+
+# **9. CI/CD with Deployment**
+
+
+**Initial commit**
+
+What this does: Takes a snapshot of all your files and saves it in Git history.
+
+How to commit your code:
+
+```bash
+  # Add all files to Git staging area
+  git add .
+
+  # Create your first commit with a descriptive message
+  git commit -m "Initial commit: Complete DevOps setup with working CI/CD"
+```
+**Connect to GitHub**
+
+What this step does: Links your local Git repository to a remote GitHub repository and uploads your code.
+
+How to connect and push:
+
+```bash
+  # Set main as the default branch
+  git branch -M main
+
+  # Connect to your GitHub repository (replace yourusername with your actual GitHub username)
+  git remote add origin https://github.com/yourusername/my-devops-project.git
+
+  # Push your code to GitHub for the first time
+  git push -u origin main
+
+```
+
+# **10. Kubernetes Deployments**
+
+Create environment folders:
+
+```bash
+  mkdir -p k8s/staging k8s/production
+
+```
+
+Copy staging and production deployment YAML files as described in [k8s config](https://github.com/Anujulu/my-devops-project/tree/main/k8s)
+
+
+# License
+
+MIT License – feel free to use this as a reference for your own DevOps projects.
