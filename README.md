@@ -198,7 +198,29 @@ How to create the file:
 ```
  Copy this content into [.dockerignore](https://github.com/Anujulu/my-devops-project/blob/main/.dockerignore)
 
-    (node_modules npm-debug.log* .git .github .env .env.local .env.*.local logs *.log coverage .nyc_output .vscode .idea *.swp *.swo .DS_Store Thumbs.db README.md tests/ jest.config.js .eslintrc*)
+    node_modules 
+    npm-debug
+    .log* 
+    .git
+    .github 
+    .env 
+    .env.
+    local 
+    .env.*
+    .local 
+    logs *
+    .log 
+  coverage 
+  .nyc_output 
+  .vscode .idea
+  *.swp 
+  *.swo 
+  .DS_Store 
+  Thumbs.db 
+  README.md 
+  tests/ 
+  jest.config.js 
+  .eslintrc*
 
 **Create .gitignore**
     What this file does: Tells Git which files to ignore and not track in version control (like temporary files, dependencies, etc.).
